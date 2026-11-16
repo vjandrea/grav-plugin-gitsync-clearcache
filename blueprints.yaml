@@ -1,0 +1,30 @@
+name: GitSync Clear Cache
+slug: gitsync-clearcache
+type: plugin
+version: 1.0.0
+description: Clears Grav's cache after every Git Sync pull, so new templates, blueprints and plugins take effect without a manual clearcache.
+icon: refresh
+author:
+  name: Andrea Bergamasco
+  url: https://github.com/vjandrea
+homepage: https://github.com/vjandrea/grav-plugin-gitsync-clearcache
+bugs: https://github.com/vjandrea/grav-plugin-gitsync-clearcache/issues
+keywords: git-sync, cache, deploy
+license: MIT
+dependencies:
+  - { name: grav, version: '>=1.7.0' }
+  - { name: git-sync }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
